@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,24 +6,22 @@
   <title>Enhanced Resume Builder</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    /* Global Styles */
     body {
       font-family: 'Roboto', sans-serif;
       padding: 20px;
-      background-color: #f4f7f8; /* Lighter, subtle background */
+      background-color: #f4f7f8;
     }
 
     h1 {
       text-align: center;
       margin-bottom: 20px;
-      color: #2c3e50; /* Darker heading */
+      color: #2c3e50;
     }
 
-    /* Layout */
     .container {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px; /* Increased gap */
+      gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -34,15 +31,13 @@
       padding: 30px;
       border-radius: 10px;
       flex: 1 1 400px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Softer shadow */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     
     .form-section {
-        /* Ensure the form section takes up enough space */
         min-width: 350px;
     }
 
-    /* Form Elements */
     label {
       display: block;
       margin-top: 15px;
@@ -62,7 +57,7 @@
     }
 
     input:focus, textarea:focus {
-        border-color: #3498db; /* Highlight on focus */
+        border-color: #3498db;
         outline: none;
     }
 
@@ -71,13 +66,12 @@
       min-height: 100px;
     }
 
-    /* Buttons */
     button {
       margin-top: 20px;
       padding: 12px 25px;
       font-size: 16px;
       font-weight: 700;
-      background-color: #3498db; /* Professional blue */
+      background-color: #3498db;
       color: #fff;
       border: none;
       border-radius: 5px;
@@ -89,13 +83,11 @@
       background-color: #2980b9;
     }
     
-    /* Separator for Form Sections */
     .form-separator {
         border-top: 1px solid #ecf0f1;
         margin: 20px 0;
     }
 
-    /* Preview Section - Resume Styling */
     .preview-section {
       max-width: 700px;
       line-height: 1.6;
@@ -127,10 +119,9 @@
     
     .preview-section h4 {
         margin: 15px 0 5px 0;
-        padding: 5px 0;
         font-size: 16px;
         color: #fff;
-        background-color: #34495e; /* Darker background for section title */
+        background-color: #34495e;
         padding-left: 10px;
         border-radius: 3px;
     }
@@ -143,7 +134,7 @@
     .experience-item, .education-item {
         margin-bottom: 15px;
         padding-left: 10px;
-        border-left: 3px solid #3498db; /* Visual indicator for items */
+        border-left: 3px solid #3498db;
     }
 
     .job-title, .degree {
@@ -159,7 +150,6 @@
         margin-bottom: 5px;
     }
 
-    /* Print Styles */
     @media print {
       body {
         background-color: #fff;
@@ -180,7 +170,7 @@
           gap: 0;
       }
       .preview-section h4 {
-          background-color: #ecf0f1; /* Lighter background for print */
+          background-color: #ecf0f1;
           color: #34495e;
       }
     }
@@ -193,58 +183,56 @@
     <div class="form-section">
         <h2>Personal Details</h2>
       <label for="name">Name:</label>
-      <input type="text" id="name" oninput="updatePreview()" value="Jane Doe">
+      <input type="text" id="name" placeholder="Enter your full name" oninput="updatePreview()">
 
       <label for="role">Desired Role:</label>
-      <input type="text" id="role" oninput="updatePreview()" value="Senior Web Developer">
+      <input type="text" id="role" placeholder="Enter desired role" oninput="updatePreview()">
 
       <label for="email">Email:</label>
-      <input type="email" id="email" oninput="updatePreview()" value="jane.doe@example.com">
+      <input type="email" id="email" placeholder="Enter your email" oninput="updatePreview()">
 
       <label for="phone">Phone:</label>
-      <input type="text" id="phone" oninput="updatePreview()" value="(555) 123-4567">
+      <input type="text" id="phone" placeholder="Enter phone number" oninput="updatePreview()">
 
       <label for="website">Website/LinkedIn:</label>
-      <input type="text" id="website" oninput="updatePreview()" value="linkedin.com/in/janedoe">
+      <input type="text" id="website" placeholder="Enter website or LinkedIn" oninput="updatePreview()">
 
       <label for="location">Location:</label>
-      <input type="text" id="location" oninput="updatePreview()" value="San Francisco, CA">
+      <input type="text" id="location" placeholder="Enter location" oninput="updatePreview()">
       
       <div class="form-separator"></div>
       
       <h2>Summary</h2>
       <label for="summary">Professional Summary:</label>
-      <textarea id="summary" oninput="updatePreview()">Highly motivated and results-driven Senior Web Developer with 8+ years of experience specializing in the MERN stack. Proven ability to lead development teams, architect scalable solutions, and deliver high-quality code. Seeking a challenging role to leverage technical expertise and drive product innovation.</textarea>
+      <textarea id="summary" placeholder="Write a short professional summary..." oninput="updatePreview()"></textarea>
 
       <div class="form-separator"></div>
       
       <h2>Experience</h2>
-      <label for="job1-title">Job 1 Title & Dates (e.g., Sr. Dev, 2018-Present):</label>
-      <input type="text" id="job1-title" oninput="updatePreview()" value="Senior Software Engineer, 2021 - Present">
+      <label for="job1-title">Job 1 Title & Dates:</label>
+      <input type="text" id="job1-title" placeholder="e.g., Software Engineer, 2020 - Present" oninput="updatePreview()">
       <label for="job1-company">Company 1:</label>
-      <input type="text" id="job1-company" oninput="updatePreview()" value="Tech Innovations Inc.">
-      <label for="job1-desc">Job 1 Description (use bullet points or line breaks):</label>
-      <textarea id="job1-desc" oninput="updatePreview()">- Led a team of 4 developers in the redesign and launch of the company's main e-commerce platform.
-- Reduced server response time by 30% by optimizing MongoDB queries and implementing caching strategies.
-- Mentored junior developers on best practices for React component lifecycle and state management.</textarea>
+      <input type="text" id="job1-company" placeholder="Company name" oninput="updatePreview()">
+      <label for="job1-desc">Job 1 Description:</label>
+      <textarea id="job1-desc" placeholder="Responsibilities and achievements..." oninput="updatePreview()"></textarea>
 
       <div class="form-separator"></div>
       
       <h2>Education</h2>
-      <label for="edu1-degree">Degree & Dates (e.g., M.S. Comp Sci, 2016):</label>
-      <input type="text" id="edu1-degree" oninput="updatePreview()" value="B.S. Computer Science, 2012 - 2016">
+      <label for="edu1-degree">Degree & Dates:</label>
+      <input type="text" id="edu1-degree" placeholder="e.g., B.Sc. Computer Science, 2016 - 2020" oninput="updatePreview()">
       <label for="edu1-school">School 1:</label>
-      <input type="text" id="edu1-school" oninput="updatePreview()" value="University of Technology">
-      <label for="edu1-desc">Relevant Details (e.g., Honors, GPA):</label>
-      <input type="text" id="edu1-desc" oninput="updatePreview()" value="Graduated Summa Cum Laude, GPA: 3.9/4.0">
+      <input type="text" id="edu1-school" placeholder="University/College name" oninput="updatePreview()">
+      <label for="edu1-desc">Relevant Details:</label>
+      <input type="text" id="edu1-desc" placeholder="e.g., GPA, Honors" oninput="updatePreview()">
 
       <button onclick="printResume()">Print Resume</button>
     </div>
 
     <div class="preview-section">
-      <h2 id="p-name">Jane Doe</h2>
-      <h3 id="p-role">Senior Web Developer</h3>
-      <p id="p-contact">jane.doe@example.com | (555) 123-4567 | linkedin.com/in/janedoe | San Francisco, CA</p>
+      <h2 id="p-name">Your Name</h2>
+      <h3 id="p-role">Your Role</h3>
+      <p id="p-contact">Email | Phone | Website/LinkedIn | Location</p>
       
       <h4 class="section-title">PROFESSIONAL SUMMARY</h4>
       <p id="p-summary">Your professional summary will appear here.</p>
@@ -252,18 +240,18 @@
       <h4 class="section-title">EXPERIENCE</h4>
       <div id="p-experience">
           <div class="experience-item">
-              <p class="job-title">Senior Software Engineer, 2021 - Present</p>
-              <p class="company">Tech Innovations Inc.</p>
-              <p class="job-desc">- Led a team of 4 developers in the redesign and launch of the company's main e-commerce platform.<br>- Reduced server response time by 30% by optimizing MongoDB queries and implementing caching strategies.<br>- Mentored junior developers on best practices for React component lifecycle and state management.</p>
+              <p class="job-title">Job Title, Dates</p>
+              <p class="company">Company Name</p>
+              <p class="job-desc">Job description details.</p>
           </div>
       </div>
       
       <h4 class="section-title">EDUCATION</h4>
       <div id="p-education">
           <div class="education-item">
-              <p class="degree">B.S. Computer Science, 2012 - 2016</p>
-              <p class="school">University of Technology</p>
-              <p class="edu-desc">Graduated Summa Cum Laude, GPA: 3.9/4.0</p>
+              <p class="degree">Degree Name, Dates</p>
+              <p class="school">School Name</p>
+              <p class="edu-desc">Relevant Details.</p>
           </div>
       </div>
 
@@ -272,35 +260,25 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Run update on load to populate the preview with default/initial values
         updatePreview(); 
     });
     
     function formatDescription(text) {
-        // Replaces line breaks with <br> tags and formats for better readability
         if (!text) return "";
         let lines = text.split('\n').filter(line => line.trim() !== '');
-        
-        // Convert lines that look like bullet points into an unordered list
         if (lines.every(line => line.trim().startsWith('-'))) {
             let listHtml = '<ul>';
             lines.forEach(line => {
-                // Remove the leading hyphen and trim whitespace
                 let content = line.trim().replace(/^-/, '').trim();
-                if (content) {
-                    listHtml += `<li>${content}</li>`;
-                }
+                if (content) listHtml += `<li>${content}</li>`;
             });
             listHtml += '</ul>';
             return listHtml;
         }
-        
-        // Otherwise, just use line breaks
         return text.replace(/\n/g, '<br>');
     }
 
     function updatePreview() {
-      // 1. Personal & Contact Info
       document.getElementById("p-name").innerText = document.getElementById("name").value || "Your Name";
       document.getElementById("p-role").innerText = document.getElementById("role").value || "Your Role";
 
@@ -309,17 +287,13 @@
       let website = document.getElementById("website").value || "Website/LinkedIn";
       let location = document.getElementById("location").value || "Location";
       
-      // Construct the contact line with actual data, only showing a separator if data exists
-      let contactParts = [email, phone, website, location].filter(part => part !== "" && part !== "Email" && part !== "Phone" && part !== "Website/LinkedIn" && part !== "Location");
-      document.getElementById("p-contact").innerText = contactParts.join(' | ');
+      let contactParts = [email, phone, website, location].filter(part => !["Email","Phone","Website/LinkedIn","Location"].includes(part));
+      document.getElementById("p-contact").innerText = contactParts.length ? contactParts.join(' | ') : "Email | Phone | Website/LinkedIn | Location";
 
-      // 2. Summary
       document.getElementById("p-summary").innerText = document.getElementById("summary").value || "Your professional summary will appear here.";
       
-      // 3. Experience
       const expDiv = document.getElementById("p-experience");
-      expDiv.innerHTML = ""; // Clear existing content
-
+      expDiv.innerHTML = "";
       const job1Title = document.getElementById("job1-title").value;
       const job1Company = document.getElementById("job1-company").value;
       const job1Desc = document.getElementById("job1-desc").value;
@@ -332,13 +306,18 @@
                 <p class="job-desc">${formatDescription(job1Desc) || "Job description details."}</p>
             </div>
           `;
+      } else {
+          expDiv.innerHTML = `
+            <div class="experience-item">
+                <p class="job-title">Job Title, Dates</p>
+                <p class="company">Company Name</p>
+                <p class="job-desc">Job description details.</p>
+            </div>
+          `;
       }
-      // You can expand this section (job2, job3, etc.) by repeating the logic above.
 
-      // 4. Education
       const eduDiv = document.getElementById("p-education");
-      eduDiv.innerHTML = ""; // Clear existing content
-      
+      eduDiv.innerHTML = "";
       const edu1Degree = document.getElementById("edu1-degree").value;
       const edu1School = document.getElementById("edu1-school").value;
       const edu1Desc = document.getElementById("edu1-desc").value;
@@ -351,8 +330,15 @@
                 <p class="edu-desc">${edu1Desc || "Relevant Details."}</p>
             </div>
           `;
+      } else {
+          eduDiv.innerHTML = `
+            <div class="education-item">
+                <p class="degree">Degree Name, Dates</p>
+                <p class="school">School Name</p>
+                <p class="edu-desc">Relevant Details.</p>
+            </div>
+          `;
       }
-      // You can expand this section (edu2, edu3, etc.) by repeating the logic above.
     }
 
     function printResume() {
